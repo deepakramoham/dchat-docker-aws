@@ -66,9 +66,9 @@ jobs:
         id: render-task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-        task-definition: ecs-task-definition.json
-        container-name: Main
-        image: 717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat2969:${{ github.sha }}
+          task-definition: ecs-task-definition.json
+          container-name: Main
+          image: 717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat2969:${{ github.sha }}
 
         
        
