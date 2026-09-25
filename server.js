@@ -36,7 +36,7 @@ const io = new Server(server, {
 // Get old messages
 
 app.get("/auto-deploy", (req, res) => {
-  res.status(200).send("Yes it is a success");
+  res.status(200).send("Finally Github actions done!!!");
 });
 app.get("/update", (req, res) => {
   res.status(200).send("updated image");
