@@ -37,7 +37,7 @@ jobs:
         run: npm test
 
       - name: Build Docker image
-        run: docker build -t dchat-backend .
+        run: docker build -t dchat2969 .
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
