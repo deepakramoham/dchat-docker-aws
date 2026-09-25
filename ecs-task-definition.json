@@ -37,7 +37,7 @@
         },
         {
           "name": "MONGO_URI",
-          "value": "YOUR_MONGO_URI_HERE"
+          "value": "arn:aws:secretsmanager:ap-south-1:717728192823:secret:dchat/mongodb-wHgt2v"
         },
         {
           "name": "REDIS_URL",
