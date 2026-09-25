@@ -35,6 +35,9 @@ const io = new Server(server, {
 
 // Get old messages
 
+app.get("/auto-deploy", (req, res) => {
+  res.status(200).send("Yes it is a success");
+});
 app.get("/update", (req, res) => {
   res.status(200).send("updated image");
 });
