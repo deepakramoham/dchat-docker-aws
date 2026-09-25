@@ -54,13 +54,13 @@ jobs:
 
       - name: Tag Docker image
         run: |
-          docker tag dchat-backend:latest \
-            717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat-backend:${{ github.sha }}
+          docker tag dchat2969:latest \
+            717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat2969:${{ github.sha }}
 
       - name: Push Docker image to ECR
         run: |
           docker push \
-            717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat-backend:${{ github.sha }}
+            717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat2969:${{ github.sha }}
 
         
        
