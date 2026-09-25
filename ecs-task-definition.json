@@ -1,0 +1,58 @@
+{
+  "family": "dchat-task",
+  "executionRoleArn": "arn:aws:iam::717728192823:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "3072",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "containerDefinitions": [
+    {
+      "name": "Main",
+      "image": "717728192823.dkr.ecr.ap-south-1.amazonaws.com/dchat2969:IMAGE_TAG",
+      "cpu": 0,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "name": "main-5000-tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "environment": [
+        {
+          "name": "CLIENT_URL",
+          "value": "http://dchat2969.s3-website.ap-south-1.amazonaws.com"
+        },
+        {
+          "name": "PORT",
+          "value": "5000"
+        },
+        {
+          "name": "MONGO_URI",
+          "value": "YOUR_MONGO_URI_HERE"
+        },
+        {
+          "name": "REDIS_URL",
+          "value": "redis://172.31.13.218:6379"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/dchat-task",
+          "awslogs-create-group": "true",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
